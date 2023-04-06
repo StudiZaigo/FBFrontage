@@ -2,7 +2,7 @@ object Tables: TTables
   Left = 0
   Top = 0
   Caption = 'LogBase Tables'
-  ClientHeight = 341
+  ClientHeight = 324
   ClientWidth = 1089
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -96,12 +96,20 @@ object Tables: TTables
       TabOrder = 6
       OnClick = btnClearClick
     end
+    object cbSystemTable: TCheckBox
+      Left = 564
+      Top = 21
+      Width = 133
+      Height = 25
+      Caption = 'Include system table'
+      TabOrder = 7
+    end
   end
   object Panel1: TPanel
     Left = 0
     Top = 65
     Width = 1089
-    Height = 276
+    Height = 259
     Align = alClient
     Caption = 'Panel1'
     TabOrder = 1
@@ -109,7 +117,7 @@ object Tables: TTables
       Left = 1
       Top = 1
       Width = 1087
-      Height = 274
+      Height = 257
       Align = alClient
       DataSource = DataSource1
       TabOrder = 0

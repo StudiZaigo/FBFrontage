@@ -29,6 +29,7 @@ type
     SaveDialog1: TSaveDialog;
     btnConvert: TButton;
     btnClear: TButton;
+    cbSystemTable: TCheckBox;
     procedure FormResize(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure btnSelectClick(Sender: TObject);
@@ -367,9 +368,14 @@ begin
   with IBQuery1 do  // PrimaryKeyÇê›íËÇ∑ÇÈ
     begin
     SQL.Clear;
-    SQL.Add('SELECT RDB$RELATION_NAME FROM RDB$RELATIONS');
-    SQL.Add('  WHERE RDB$VIEW_BLR IS NULL');
-    SQL.Add('  AND (RDB$SYSTEM_FLAG IS NULL OR RDB$SYSTEM_FLAG = 0);');
+    if cbSystemTable.Checked then
+      SQL.Add('SELECT RDB$RELATION_NAME FROM RDB$RELATIONS;')
+    else
+      begin
+      SQL.Add('SELECT RDB$RELATION_NAME FROM RDB$RELATIONS');
+      SQL.Add('  WHERE RDB$VIEW_BLR IS NULL');
+      SQL.Add('  AND (RDB$SYSTEM_FLAG IS NULL OR RDB$SYSTEM_FLAG = 0);');
+    end;
     Open;
     While not Eof do
       begin

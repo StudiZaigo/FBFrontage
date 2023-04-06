@@ -53,6 +53,10 @@
         <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_IntegerOverflowCheck>true</DCC_IntegerOverflowCheck>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_RangeChecking>true</DCC_RangeChecking>
+        <VerInfo_Keys>CompanyName=Studio ZAigo;FileDescription=Firebird 用フロント;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=for me onky</VerInfo_Keys>
         <Manifest_File>None</Manifest_File>
     </PropertyGroup>
     <ItemGroup>
